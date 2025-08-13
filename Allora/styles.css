@@ -1,0 +1,390 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #000000;
+    background-color: #ffffff;
+    font-size: 16px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Top bar */
+.top-bar {
+    background: #ffffff;
+    padding: 15px 0;
+    border-bottom: 1px solid #e8e8e8;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.top-bar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.top-logo {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.top-logo:hover {
+    transform: scale(1.05);
+}
+
+.top-logo-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #000000;
+}
+
+/* Glossary header */
+.glossary-header {
+    background: #000000;
+    color: #ffffff;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.glossary-title {
+    text-align: center;
+}
+
+.glossary-main-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 15px;
+    letter-spacing: -0.02em;
+}
+
+.glossary-subtitle {
+    font-size: 1.2rem;
+    color: #cccccc;
+    font-weight: 400;
+    margin: 0;
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.follow-text {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: #666666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    opacity: 0.8;
+}
+
+.profile-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #000000;
+    padding: 8px 12px;
+    border-radius: 25px;
+    background: rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.profile-link:hover {
+    background: rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.profile-pic {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.profile-name {
+    font-weight: 500;
+    font-size: 0.8rem;
+    color: #000000;
+}
+
+
+
+/* Main content styles */
+.main-content {
+    padding: 60px 0;
+    background-color: #fafafa;
+}
+
+/* Footer styles */
+.footer {
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 60px;
+}
+
+.copyright {
+    opacity: 0.8;
+    font-size: 0.9rem;
+    margin: 0;
+    margin-bottom: 8px;
+}
+
+.built-by {
+    opacity: 0.6;
+    font-size: 0.8rem;
+    margin: 0;
+    font-weight: 500;
+}
+
+.glossary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.term-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e8e8e8;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.term-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #000000 0%, #333333 100%);
+}
+
+.term-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    border-color: #d0d0d0;
+}
+
+.term-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #000000;
+    letter-spacing: -0.01em;
+}
+
+.term-definition {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #333333;
+    font-weight: 400;
+}
+
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .top-bar {
+        padding: 12px 0;
+    }
+
+    .top-logo {
+        width: 35px;
+        height: 35px;
+    }
+
+    .top-logo-text {
+        font-size: 1rem;
+    }
+
+    .glossary-header {
+        padding: 40px 0;
+    }
+
+    .glossary-main-title {
+        font-size: 2.2rem;
+    }
+
+    .glossary-subtitle {
+        font-size: 1rem;
+    }
+
+    .profile-info {
+        gap: 3px;
+    }
+
+    .follow-text {
+        font-size: 0.65rem;
+    }
+
+    .profile-link {
+        padding: 6px 10px;
+    }
+
+    .profile-pic {
+        width: 28px;
+        height: 28px;
+    }
+
+    .profile-name {
+        font-size: 0.75rem;
+    }
+
+    .main-content {
+        padding: 40px 0;
+    }
+
+    .glossary-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .term-card {
+        padding: 24px;
+    }
+
+    .term-title {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    .top-bar {
+        padding: 10px 0;
+    }
+
+    .top-logo {
+        width: 30px;
+        height: 30px;
+    }
+
+    .top-logo-text {
+        font-size: 0.9rem;
+    }
+
+    .glossary-header {
+        padding: 30px 0;
+    }
+
+    .glossary-main-title {
+        font-size: 1.8rem;
+    }
+
+    .glossary-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .profile-info {
+        gap: 2px;
+    }
+
+    .follow-text {
+        font-size: 0.6rem;
+    }
+
+    .profile-link {
+        padding: 5px 8px;
+    }
+
+    .profile-pic {
+        width: 24px;
+        height: 24px;
+    }
+
+    .profile-name {
+        font-size: 0.7rem;
+    }
+
+    .term-card {
+        padding: 20px;
+    }
+
+    .term-title {
+        font-size: 1.2rem;
+    }
+
+    .term-definition {
+        font-size: 0.95rem;
+    }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+.profile-link:focus {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+}
+
+/* Loading animation for profile picture */
+.profile-pic {
+    transition: opacity 0.3s ease;
+}
+
+.profile-pic:hover {
+    opacity: 0.8;
+}
+
+/* Additional hover effects */
+.term-card:hover .term-title {
+    color: #000000;
+}
+
+/* Print styles */
+@media print {
+    .header {
+        background: #000000 !important;
+        color: #ffffff !important;
+    }
+    
+    .term-card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #000000;
+    }
+} 
